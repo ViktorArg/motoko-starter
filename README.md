@@ -37,5 +37,3 @@ For running specs, on a terminal:
 For running prettier:
 
 `npm run prettier`
-
-
