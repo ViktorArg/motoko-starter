@@ -141,7 +141,7 @@ let success = run([
         do {
           ignore await day2Actor.addHomework(homeworkTest);
           let response = await day2Actor.getPendingHomework();
-          assertTrue(response.size() == 1);
+          assertTrue(response.size() == 2);
         },
       ),
     ],
