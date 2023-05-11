@@ -1,20 +1,13 @@
 import Buffer "mo:base/Buffer";
 import Result "mo:base/Result";
 import Array "mo:base/Array";
+
 import Type "Types";
-import Time "mo:base/Time";
-import Debug "mo:base/Debug";
 
 actor class Homework() {
-  public type Time = Time.Time;
-  type Homework = {
-    title: Text;
-    description: Text;
-    dueDate: Time;
-    completed: Bool;
-  };
+  type Homework = Type.Homework;
 
-  var homeworkDiary = Buffer.Buffer<Homework>(10);
+  let homeworkDiary = Buffer.Buffer<Homework>(10);
 
   // Add a new homework task
   public shared func addHomework(homework : Homework) : async Nat {
@@ -89,7 +82,7 @@ actor class Homework() {
       if(searchTerm == homework.title){
         homeworkList.add(homeworkDiary.get(counter));
       };
-      counter := counter + 1;
+      counter += 1;
     };
     return Buffer.toArray(homeworkList);
   };
