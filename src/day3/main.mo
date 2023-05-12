@@ -58,13 +58,17 @@ actor class StudentWall() {
         return #err("Message not found");
       };
       case(?currentMessage){
-        let updatedMessage : Message = {
-          content = c;
-          vote = currentMessage.vote;
-          creator = currentMessage.creator;
-        };
-        wall.put(messageId, updatedMessage);
-        return #ok();
+        if(currentMessage.creator == caller){
+          let updatedMessage : Message = {
+            content = c;
+            vote = currentMessage.vote;
+            creator = currentMessage.creator;
+          };
+          wall.put(messageId, updatedMessage);
+          return #ok();
+        } else  {
+          return #err("Wrong sender");
+        }
       };
     };
   };
