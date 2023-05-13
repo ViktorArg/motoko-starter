@@ -44,8 +44,8 @@ actor class MotoCoin() {
       case(null){
         return 0;
       };
-      case(balance){
-        return Option.get(balance, 0);
+      case(?balance){
+        return balance;
       }
     }
   };
