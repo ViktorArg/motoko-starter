@@ -19,6 +19,10 @@
     "day5": {
       "main": "src/day5/main.mo",
       "type": "motoko"
+    },
+    "BootcampLocalActor": {
+      "main": "src/day4/BootcampLocalActor.mo",
+      "type": "motoko"
     }
   },
   "defaults": {
